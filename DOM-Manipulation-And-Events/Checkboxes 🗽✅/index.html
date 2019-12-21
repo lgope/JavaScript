@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Handle user input</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <header id="page-header" class="bg-dark text-white col-sm-12">
+            <h1 id="main-heading" class="text-center"> Handle user input</h1>
+        </header>
+        <div class="row">
+            <main class="col-sm-8">
+                <form id="comment-form">
+                    <h3>Hobbies</h3>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="sports-checkbox">
+                            <label class="from-check-label" for="sports-checkbox">Sports</label>
+                        </div>
+                        <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="video-checkbox">
+                                <label class="from-check-label" for="video-checkbox">Video games</label>
+                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="music-checkbox">
+                            <label class="from-check-label" for="music-checkbox">Music</label>
+                        </div>
+                    </div>
+                    <h3>Favourite mode of transport</h3>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="car-radio" value="car"
+                                name="transport-method">
+                            <label class="form-check-label" for="car-radio">Car</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="bike-radio" value="bike"
+                                name="transport-method">
+                            <label class="form-check-label" for="bike-radio">Bike</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="other-radio" value="other"
+                                name="transport-method">
+                            <label class="form-check-label" for="other-radio">Other</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="music-preference">Favourite kind of music</label>
+                        <select class="form-control" id="music-preference">
+                            <option value="rock">Rock</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="classical">Classical</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </form>
+            </main>
+            <aside id="sidebar" class="col-sm-4 bg-info text-white">
+                <p>
+                    You enjoy:
+                    <ul id="hobbies-result">
+                        <li>Sports</li>
+                        <li>Video games</li>
+                        <li>Music</li>
+                    </ul>
+                </p>
+                <p>Your favourite mode of transport is:</p>
+                <div class="transport-result"></div>
+
+                <p>Your favourite kink of music is:</p>
+                <div class="music-result"></div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="scripts.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
