@@ -1,0 +1,22 @@
+{
+  "name": "asynchronous-js",
+  "version": "1.0.0",
+  "description": "All about asynchronous javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lakshmangope/node.js.git"
+  },
+  "author": "Lakshman Gope",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lakshmangope/node.js/issues"
+  },
+  "homepage": "https://github.com/Lakshmangope/node.js#readme",
+  "dependencies": {
+    "superagent": "^5.1.0"
+  }
+}
