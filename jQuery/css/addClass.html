@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>addClass</title>
+    <style>
+        p {
+            margin: 8px;
+            font-size: 16px;
+        }
+
+        .selected {
+            color: rgb(99, 187, 182);
+        }
+
+        .highlight {
+            background: yellow;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+    <p>Hello</p>
+    <p>and</p>
+    <p>Goodbye</p>
+
+    <script>
+        $("p").last().addClass("highlight");
+        // $("p").last().addClass("selected");
+    </script>
+
+</body>
+
+</html>
