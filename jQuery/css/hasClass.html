@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>hasClass</title>
+    <style>
+        p {
+            margin: 8px;
+            font-size: 16px;
+        }
+
+        .selected {
+            color: rgb(89, 148, 128);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+    <p>This paragraph is black and is the first paragraph.</p>
+    <p class="selected">This paragraph is colored and is the second paragraph.</p>
+    <div id="result1">First paragraph has selected class: </div>
+    <div id="result2">Second paragraph has selected class: </div>
+    <p id="result3">At least one paragraph has selected class: </p>
+
+    <script>
+        $("#result1").append($("p").first().hasClass("selected").toString());
+        $("#result2").append($("p").last().hasClass("selected").toString());
+        $("#result3").append($("p").hasClass("selected").toString());
+    </script>
+
+</body>
+
+</html>
