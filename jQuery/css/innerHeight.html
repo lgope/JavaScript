@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>innerHeight</title>
+    <style>
+        p {
+            margin: 15px;
+            padding: 8px;
+            border: 2px solid rgb(124, 243, 13);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+    <p>Hi</p>
+    <p></p>
+
+    <script>
+        var p = $("p").first();
+        $("p").last().text("innerHeight : " + p.innerHeight());
+    </script>
+
+</body>
+
+</html>
