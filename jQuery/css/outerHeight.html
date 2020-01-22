@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>outerHeight Example</title>
+    <style>
+        p {
+            margin: 10px;
+            padding: 8px;
+            border: 2px solid rgb(0, 255, 191);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+    <p>Hi</p>
+    <p></p>
+
+    <script>
+        var p = $("p").first();
+        $("p").last().text(
+            "outerHeight : " + p.outerHeight() +
+            " , outerHeight( true ) : " + p.outerHeight(true));
+    </script>
+
+</body>
+
+</html>
