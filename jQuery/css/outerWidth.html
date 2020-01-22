@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>outerWidth</title>
+    <style>
+        p {
+            margin: 10px;
+            padding: 6px;
+            border: 2px solid rgb(3, 183, 255);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+    <p>Hi</p>
+    <p></p>
+
+    <script>
+        var p = $("p").first();
+        $("p").last().text(
+            "outerWidth : " + p.outerWidth() +
+            " , outerWidth( true ) : " + p.outerWidth(true));
+    </script>
+
+</body>
+
+</html>
