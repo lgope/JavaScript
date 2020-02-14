@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#test1").text(function (i, originalText) {
+                    return `Old text: ${originalText} New text: Hello World! (index: ${i})`;
+                });
+            });
+
+            $("#btn2").click(function () {
+                $("#test2").html(function (i, originalText) {
+
+                    return `Old html: ${originalText} New html: Hello <b> World! </b> (index: ${i})`
+                });
+            });
+
+            $("#btn3").click(function () {
+                $("#test3").val("Hello World!");
+            });
+
+            $("#btn4").click(function () {
+                $("#hreftag").attr({
+                    "href": "https://github.com/"
+                });
+                $("#linktag").children("a").text("github.com");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p id="test1">This is a <b>bold</b> paragraph.</p>
+    <p id="test2">This is another <b>bold</b> paragraph.</p>
+
+    <p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+
+
+    <p id="linktag"><a id="hreftag" href="https://www.google.com/" target="blank">google.com</a></p>
+
+
+    <button id="btn1">Show Old/New Text</button>
+    <button id="btn2">Show Old/New HTML</button>
+    <button id="btn3">Set Value</button>
+    <button id="btn4">Change href and title</button>
+
+</body>
+
+</html>
