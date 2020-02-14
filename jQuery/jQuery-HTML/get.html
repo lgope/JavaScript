@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#txtbtn").click(function () {
+                alert("Text: " + $("#test").text());
+            });
+            $("#htmlbtn").click(function () {
+                alert("HTML: " + $("#test").html());
+            });
+            $("#hrefbtn").click(function () {
+                alert($("#googlelink").attr("href"));
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p id="test">This is some <b>bold</b> text in a paragraph.</p>
+
+    <p><a href="https://www.google.com/" id="googlelink" target="blank">Google.com</a></p>
+
+    <button id="txtbtn">Show Text</button>
+    <button id="htmlbtn">Show HTML</button>
+    <button id="hrefbtn">Show href Value</button>
+
+</body>
+
+</html>
