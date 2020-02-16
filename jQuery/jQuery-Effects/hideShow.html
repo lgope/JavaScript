@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("p").hide(1000);
+            });
+            $("#show").click(function () {
+                $("p").show(1000);
+            });
+
+            $("#toggleBtn").click(function () {
+                $("p").toggle(1000);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <p>This is a paragraph 1.</p>
+    <p>This is a paragraph 2.</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggleBtn">Toggle</button>
+
+</body>
+
+</html>
