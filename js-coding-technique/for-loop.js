@@ -30,3 +30,16 @@ arr.forEach(consoleArrayElements);
 // arr[1] = 5
 // arr[1] = 8
 // arr[2] = 9
+
+// Bad:
+var i;
+for (i = 0; i < arr.length; i++) {
+  // something....
+}
+
+// Better Code:
+var i;
+var len = arr.length;
+for (i = 0; i < len; i++) {
+  // something....
+}
