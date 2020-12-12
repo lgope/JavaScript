@@ -69,3 +69,50 @@
  let str = "Hello world, welcome to the JS Universe.";
  console.log(str.length); // 40
  ```
+ 
+  <a name="interview"></a><a name="1.6"></a>
+- [1.6](#length) **Interview Qus**: Tricky JavaScript Interview Questions and Answers
+ 
+ ```javascript 
+// remove duplicates form and array
+let arr = [1, 2, 2, 3, 4];
+
+console.log([...new Set(arr)]);
+
+// output test 1
+console.log(5 < 6 < 7); // true // 5 < 6 => true => true < 7 => true = 1 => 1 < 7 => true
+
+console.log(7 > 6 > 5); // false // 7 > 6 => true => true > 5 => true = 1 => 1 > 5 = false
+
+console.log(Math.max()); // -Infinity lowest min number in js
+console.log(Math.max(1, 2, 3, 4)); // 4
+
+
+// obj
+let profile = {
+    name: 'Lakshman'
+};
+
+// Object.freeze(profile); // freeze don't allow insert and update
+Object.seal(profile); // freeze don't allow insert, remove but allow update
+
+profile.name = 'Gope';
+
+console.log(profile);
+
+// obj
+let user = {
+    name: 'Gope'
+};
+
+// age not allow any update but name does
+Object.defineProperty(user, 'age', {
+    value: 4,
+    writable: false
+})
+
+user.name = 'Lakshman'
+user.age = 5;
+
+console.log(user); // TypeError: Cannot assign to read only property 'age' of object '#<Object>'
+ ```
