@@ -115,3 +115,32 @@ let obj2 = {
 
 obj1 = { ...obj1, ...obj2 };
 console.log(obj1);
+
+
+// more test
+const a = [1, 2, 5, 7, 9];
+const b = [2, 5, 7, 12, 100];
+
+// const c = [...a, ...b];
+
+const c = a.concat(b).sort((a, b) => a > b)
+
+console.log(c)
+
+
+const obj = {
+  x: 1,
+  getX() {
+    const inner = function() {
+        console.log(this.x); 
+      }
+
+      inner.bind(this)();
+  }
+}
+
+obj.getX();
+
+const arrayTotal = a.reduce((t, i) => t+i);
+
+console.log(arrayTotal)
