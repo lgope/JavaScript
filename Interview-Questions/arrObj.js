@@ -144,3 +144,11 @@ obj.getX();
 const arrayTotal = a.reduce((t, i) => t+i);
 
 console.log(arrayTotal)
+
+
+// OUTPUT
+const arr = [1, 2, 3, 4, 5];
+
+arr.push(arr.push(arr.push(arr.pop())))
+
+console.log(arr);
