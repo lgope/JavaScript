@@ -152,3 +152,10 @@ const arr = [1, 2, 3, 4, 5];
 arr.push(arr.push(arr.push(arr.pop())))
 
 console.log(arr);
+
+
+// OUTPUT
+const arrayOfOddNumbers = [1, 3, 5];
+arrayOfOddNumbers[100] = 199;
+console.log(arrayOfOddNumbers.length);
+
