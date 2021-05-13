@@ -44,3 +44,23 @@ exports.createOne = Model =>
       },
     });
   });
+
+// another
+
+const awaitHandlerFactory = (middleware) => {
+  return async (req, res, next) => {
+    try {
+      await middleware(req, res, next);
+    } catch (err) {
+      next(err);
+    }
+  };
+};
+// and use it this way:
+app.get(
+  "/",
+  awaitHandlerFactory(async (request, response) => {
+    const result = await getContent();
+    response.send(result);
+  })
+);
