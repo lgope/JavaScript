@@ -69,7 +69,7 @@
  let str = "Hello world, welcome to the JS Universe.";
  console.log(str.length); // 40
  ```
- 
+
   <a name="interview"></a><a name="1.6"></a>
 - [1.6](#length) **Interview Qus**: Tricky JavaScript Interview Questions and Answers
  
@@ -115,4 +115,11 @@ user.name = 'Lakshman'
 user.age = 5;
 
 console.log(user); // TypeError: Cannot assign to read only property 'age' of object '#<Object>'
+ ```
+ 
+  <a name="rename"></a><a name="1.7"></a>
+- [1.5](#rename) **rename**: Rename multiple files extentions at once by a command (Just for Win).
+ 
+ ```javascript 
+  Get-ChildItem *.css | Rename-Item -NewName { $_.name -Replace '\.css','.scss' }
  ```
