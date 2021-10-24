@@ -159,3 +159,13 @@ const arrayOfOddNumbers = [1, 3, 5];
 arrayOfOddNumbers[100] = 199;
 console.log(arrayOfOddNumbers.length);
 
+
+
+// OUTPUT
+class MyClass extends (String, Array) {
+  construct() {}
+}
+
+const a = new MyClass()
+
+console.log(a instanceof Array); // true
