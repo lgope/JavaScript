@@ -1,15 +1,11 @@
 // Insert an item into an array at a specific index (Immutable insertion)
 /**
- * 
- * @param {Array} arr
- * @param {Int} index 
- * @param {*} values 
+ *
+ * @param {Array} array
+ * @param {Int} index
+ * @param {*} items
  * @returns arr {New Array}
- * 
- * @demo let bar = insertAt(arr, 2, 'a', 'b')
+ *
+ * @demo let bar = insertAt(array, 2, 'a', 'b')
  */
-export const insertAt = (arr, index) => {
-	const items = Array.prototype.slice.call(arguments, 2);
-
-	return [].concat(arr.slice(0, index), items, arr.slice(index));
-};
+export const insertAt = (array, index, ...items) => [...array.slice(0, index), ...items, ...array.slice(index)];
