@@ -169,3 +169,6 @@ class MyClass extends (String, Array) {
 const a = new MyClass()
 
 console.log(a instanceof Array); // true
+
+// OUTPUT
+["1101100000111110","1101110100011111"].map(s => String.fromCharCode(parseInt(s, 2))).reduce((acc, n) => acc + n, "");
