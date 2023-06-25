@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Lakshmangope/node.js#readme",
   "dependencies": {
-    "superagent": "^5.1.0"
+    "superagent": "^5.3.1"
   }
 }
