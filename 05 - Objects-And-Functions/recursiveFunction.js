@@ -43,3 +43,14 @@ var factorial = function (number) {
 };
 
 console.log(`Factorial = ${factorial(9)}`);
+
+
+// Function 
+function countDown(number) {
+    if (number !== 0) countDown.count += number + countDown(number - 1);
+    return countDown.count;
+}
+
+countDown.count = 0;
+console.log(countDown(4));
+
