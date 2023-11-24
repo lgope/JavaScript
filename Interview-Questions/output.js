@@ -20,3 +20,16 @@ function asyncForEach(array, cb) {
 asyncForEach([1, 2, 3, 4], (i) => {
   console.log(i);
 })
+
+
+// 4) Output? And explain (hint: Octal)
+console.log(016)
+
+console.log(017)
+
+console.log(026)
+
+console.log(027)
+
+// 5) Output?
+console.log([...'Hello']);
