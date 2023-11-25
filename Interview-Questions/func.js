@@ -1,30 +1,29 @@
 // what is output?
 const foo = () => {
-  let a = b = 10;
+  let a = (b = 10);
   a++;
-  return a
-}
+  return a;
+};
 
 foo();
 
 console.log(a);
 console.log(b);
 
-
 // output
 function createIncrement() {
-	let count = 0;
+  let count = 0;
 
-	function increment() {
-		count++;
-	}
+  function increment() {
+    count++;
+  }
 
-	let message = `Count is ${count}`;
-	function log() {
-		console.log(message);
-	}
+  let message = `Count is ${count}`;
+  function log() {
+    console.log(message);
+  }
 
-	return [increment, log];
+  return [increment, log];
 }
 
 const [increment, log] = createIncrement();
@@ -36,18 +35,18 @@ increment();
 log();
 
 // Console sequence output?
-function run () {
+function run() {
   const promise = new Promise((resolve) => {
-    resolve('promise');
-  })
-
-  setTimeout(() => {
-   console.log('setTimeout'); 
+    resolve("promise");
   });
 
-  promise.then(res => console.log(res))
+  setTimeout(() => {
+    console.log("setTimeout");
+  });
 
-  console.log('log');
+  promise.then((res) => console.log(res));
+
+  console.log("log");
 }
 
 run();
@@ -55,3 +54,10 @@ run();
 // How does the Javascript interprets the following code?
 console.log(x);
 var x = 100;
+
+// Output
+(function () {
+  var a = (b = 5);
+})();
+
+console.log(b);

@@ -62,3 +62,87 @@ const array = [NaN];
 
 const result = array.includes(NaN);
 console.log(result); // True: why? => array.includes follows sameValueZero algorithm
+
+// Output
+const p = Promise.resolve("Hello");
+p.then((val) => {
+  console.log(val);
+  return `${val} world`;
+}).then((newVal) => {
+  console.log("new ", newVal);
+});
+
+// Output => level => easy
+function* counter() {
+  let index = 0;
+  while (true) {
+    yield index++;
+  }
+}
+
+const gen = counter();
+
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+
+// Output
+var y = 1;
+if (function f() {}) {
+  y += typeof f;
+}
+
+console.log(y);
+
+// Output
+var k = 1;
+if (1) {
+  eval(function foo() {});
+  k += typeof foo;
+}
+
+console.log(k);
+
+// Output
+var k = 1;
+if (1) {
+  function foo() {}
+  k += typeof foo;
+}
+console.log(k);
+
+// Write a function that would allow you to do this 👉🏻 multiply(5)(6)
+
+// Ans:
+function multiply(a) {
+  return function (b) {
+    return a * b;
+  };
+}
+
+multiply(5)(6);
+
+// Explain what is callback function is and provide a simple example
+
+function modifyArray(arr, callback) {
+  arr.push(100);
+
+  callback();
+}
+
+let arr = [1, 2, 3, 4, 5];
+
+modifyArray(arr, () => {
+  console.log("Array has been modified ", arr);
+});
+
+// Given a string, reverse each word in the sentence
+const reverseBySeparator = (str, separator) =>
+  str.split(separator).reverse().join(separator);
+
+const str = "Welcome to this Javascript Guide!";
+const reverseEntireSentence = reverseBySeparator(str, "");
+
+const reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
+
+console.log(reverseEntireSentence, reverseEachWord);
