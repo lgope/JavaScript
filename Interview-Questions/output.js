@@ -146,3 +146,42 @@ const reverseEntireSentence = reverseBySeparator(str, "");
 const reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
 
 console.log(reverseEntireSentence, reverseEachWord);
+
+// Output
+function foo(func) {
+  return func.name;
+}
+
+console.log(foo(function myName() {}));
+
+// Output
+console.log((1 + 2, 3, 4));
+
+console.log((2, 9 / 3, function () {}));
+
+console.log((3, true ? 2 + 2 : 1 + 1));
+
+// Output
+function foo() {
+  return 1, 2, 3, 4;
+}
+foo();
+
+// Event Loop output test
+
+function main() {
+  console.log("A");
+  setTimeout(function exec() {
+    console.log("B");
+  }, 0);
+  runWhileLoopForNSeconds(3);
+  console.log("C");
+}
+main();
+function runWhileLoopForNSeconds(sec) {
+  let start = Date.now(),
+    now = start;
+  while (now - start < sec * 1000) {
+    now = Date.now();
+  }
+}

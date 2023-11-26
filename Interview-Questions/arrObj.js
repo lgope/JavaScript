@@ -5,12 +5,12 @@
 
 let obj = {
   a: 10,
-  b: 20
+  b: 20,
 };
 
 let obj2 = {
   a: 10,
-  b: 20
+  b: 20,
 };
 
 console.log(obj == obj2);
@@ -69,32 +69,35 @@ let EXAM = [
     Subeject: "English",
     result: {
       point: 80,
-      grade: "A+"
-    }
+      grade: "A+",
+    },
   },
   {
     Subeject: "Physics",
     result: {
       point: 85,
-      grade: "A+"
-    }
+      grade: "A+",
+    },
   },
   {
     Subeject: "Math",
     result: {
       point: 89,
-      grade: "A+"
-    }
-  }
+      grade: "A+",
+    },
+  },
 ];
 
 let totalRes = 0;
-EXAM.map(subject => (totalRes += subject.result.point));
+EXAM.map((subject) => (totalRes += subject.result.point));
 
 console.log(totalRes);
 console.log((totalRes / EXAM.length).toFixed(2));
 
-let res = EXAM.reduce((accumulator, currentValue) => accumulator + currentValue.result.point, 0);
+let res = EXAM.reduce(
+  (accumulator, currentValue) => accumulator + currentValue.result.point,
+  0
+);
 console.log(res);
 
 /**
@@ -105,17 +108,16 @@ console.log(res);
 
 let obj1 = {
   a: 10,
-  b: 20
+  b: 20,
 };
 
 let obj2 = {
   c: 30,
-  d: 20
+  d: 20,
 };
 
 obj1 = { ...obj1, ...obj2 };
 console.log(obj1);
-
 
 // more test
 const a = [1, 2, 5, 7, 9];
@@ -123,52 +125,67 @@ const b = [2, 5, 7, 12, 100];
 
 // const c = [...a, ...b];
 
-const c = a.concat(b).sort((a, b) => a > b)
+const c = a.concat(b).sort((a, b) => a > b);
 
-console.log(c)
-
+console.log(c);
 
 const obj = {
   x: 1,
   getX() {
-    const inner = function() {
-        console.log(this.x); 
-      }
+    const inner = function () {
+      console.log(this.x);
+    };
 
-      inner.bind(this)();
-  }
-}
+    inner.bind(this)();
+  },
+};
 
 obj.getX();
 
-const arrayTotal = a.reduce((t, i) => t+i);
+const arrayTotal = a.reduce((t, i) => t + i);
 
-console.log(arrayTotal)
-
+console.log(arrayTotal);
 
 // OUTPUT
 const arr = [1, 2, 3, 4, 5];
 
-arr.push(arr.push(arr.push(arr.pop())))
+arr.push(arr.push(arr.push(arr.pop())));
 
 console.log(arr);
-
 
 // OUTPUT
 const arrayOfOddNumbers = [1, 3, 5];
 arrayOfOddNumbers[100] = 199;
 console.log(arrayOfOddNumbers.length);
 
-
-
 // OUTPUT
 class MyClass extends (String, Array) {
   construct() {}
 }
 
-const a = new MyClass()
+const a = new MyClass();
 
 console.log(a instanceof Array); // true
 
 // OUTPUT
-["1101100000111110","1101110100011111"].map(s => String.fromCharCode(parseInt(s, 2))).reduce((acc, n) => acc + n, "");
+["1101100000111110", "1101110100011111"]
+  .map((s) => String.fromCharCode(parseInt(s, 2)))
+  .reduce((acc, n) => acc + n, "");
+
+// Preserve immutability of objects
+
+const heroes = [
+  { name: "Wolverine", family: "Marvel" },
+  { name: "Batman", family: "DC Comics" },
+];
+
+const newHeroes = heroes.map((hero) => (hero.name = hero.name.toUpperCase()));
+
+console.log(heroes);
+
+// Right way
+const newHeroes2 = heroes.map((hero) =>
+  Object.assign({}, hero, { name: hero.name.toUpperCase() })
+); // or return {...h, name: h.name.toUpperCase()};
+
+console.log(heroes);
