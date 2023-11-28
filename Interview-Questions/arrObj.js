@@ -189,3 +189,62 @@ const newHeroes2 = heroes.map((hero) =>
 ); // or return {...h, name: h.name.toUpperCase()};
 
 console.log(heroes);
+
+// What is the problem with sort() function? Why javascript introduced toSorted() function
+
+/**
+ * Ans: sort() function mutates the original array
+ * toSorted() method takes an array and returns a new array with the elements sorted in ascending order. It does not mutate the original array. All undefined elements are sorted to the end of the array.
+ * */
+
+const arr = [1, 8, 6, 9, 7, 100, 400, 200];
+
+const oldSortedArr = arr.sort((a, b) => a - b);
+
+console.log(arr); // [1, 6, 7, 8, 9, 100, 200, 400] (mutated the original array)
+console.log(oldSortedArr, arr); // [1, 6, 7, 8, 9, 100, 200, 400]
+
+const newSortedArr = arr.toSorted((a, b) => a - b);
+
+console.log(arr); // [1, 6, 7, 8, 9, 100, 200, 400] (does not mutated the original array)
+console.log(newSortedArr); // [1, 6, 7, 8, 9, 100, 200, 400]
+
+// Remove the duplicates item from an array without build in funcitons
+const arr = [4, 1, 8, 5, 2, 1, 8, 4, 7, 5, 6, 9];
+
+const removeDuplicates = (arrData) => {
+  const obj = {};
+  for (const item of arrData) {
+    obj[item] = item;
+  }
+
+  return Object.values(obj);
+};
+
+console.log(removeDuplicates(arr));
+
+// Write a program for array intersection (keep the only common items from two arrays) (without build in functions)
+
+const arr = [1, 4, 5, 6, 9];
+const arr1 = [2, 1, 7, 5, 9, 6];
+
+const getCommonItems = (arrData, arrData1) => {
+  const obj = {};
+  const resArr = [];
+
+  for (const item of arrData) {
+    obj[item] = item;
+  }
+
+  for (const item1 of arrData1) {
+    if (obj[item1]) resArr.push(item1);
+  }
+
+  return resArr;
+};
+
+console.log(getCommonItems(arr, arr1));
+
+// Optional => using build in functions
+const intersectedArr = arr.filter((item) => arr1.includes(item));
+console.log(intersectedArr);
