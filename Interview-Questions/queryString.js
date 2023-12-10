@@ -35,12 +35,10 @@ const formatQueryString = (str) => {
 
   //   iterate through key value pairs, split on = , and save in res object as key value
   for (const pair of query) {
-    let [key, value] = pair.split("=");
+    let [key, value= 'true'] = pair.split("="); // checking value is truthy or undefined else befault 'true' value (3rd case)
 
     // check if key truthy else send empty object (2nd case)
     if (key) {
-      value = value || "true"; // checking value is truthy or undefined else befault 'true' value (3rd case)
-
       // if there is value with the same key, have to save values as array item (4th case)
       resObj[key] = resObj[key]
         ? typeof resObj[key] === "string"
@@ -59,10 +57,10 @@ const formatQueryString = (str) => {
   return resObj;
 };
 
-// console.log("1st case: ", formatQueryString("?foo=hello&bar=world"), {
-//     foo: 'hello',
-//     bar: 'world'
-//  });
+console.log("1st case: ", formatQueryString("?foo=hello&bar=world"), {
+    foo: 'hello',
+    bar: 'world'
+ });
 // console.log("2nd case: ", formatQueryString("?"), {}); // if there is no query after ?
 // console.log("3rd case: ", formatQueryString("?foo=hello&bar=world&baz"), {
 //   foo: "hello",
@@ -70,7 +68,7 @@ const formatQueryString = (str) => {
 //   baz: "true",
 // });
 
-/*console.log(
+console.log(
   "4th case: ",
   formatQueryString("?foo=hello&bar=world&baz&foo=again&foo=ok&bar=again&baz&dummy&data=earth"),
   {
@@ -80,9 +78,9 @@ const formatQueryString = (str) => {
   dummy: 'true',
   data: 'earth'
   }
-); */
+);
 
 // test case
-console.log("4th case: ", formatQueryString("?foo=hello&foo"), {
-  foo: ["hello", "true"],
-});
+// console.log("4th case: ", formatQueryString("?foo=hello&foo"), {
+//   foo: ["hello", "true"],
+// });
