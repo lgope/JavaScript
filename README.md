@@ -6,7 +6,7 @@
   1. [Important Methods](#methods)
   
 ## Methods
->  Most important javascript build in methods
+>  Hello Javascript
 
 <a name="typeof"></a><a name="1.1"></a>
 - [1.1](#typeof) **typeof**: Returns the type.
@@ -118,8 +118,30 @@ console.log(user); // TypeError: Cannot assign to read only property 'age' of ob
  ```
  
   <a name="rename"></a><a name="1.7"></a>
-- [1.5](#rename) **rename**: Rename multiple files extentions at once by a command (Just for Win).
+- [1.7](#rename) **rename**: Rename multiple files extentions at once by a command (Just for Win).
  
  ```javascript 
   Get-ChildItem *.css | Rename-Item -NewName { $_.name -Replace '\.css','.scss' }
  ```
+
+  <a name="majority"></a><a name="1.8"></a>
+- [1.8](#majority) **majority**: Find Majority Element.
+  
+```javascript
+function majorityElement(arr) {
+    let count = 0, candidate = null;
+
+    for (let num of arr) {
+        if (count === 0) candidate = num;
+        count += (num === candidate) ? 1 : -1;
+    }
+
+    return candidate;
+}
+
+// Time complexity: O(n)
+// Space complexity: O(1)
+
+const arr = [3, 2, 3, 4, 3, 1, 6, 6, 7, 8, 6, 9, 6];
+console.log(majorityElement(arr)); // Output: 6
+```
